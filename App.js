@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import {
   Montserrat_400Regular,
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from '@expo-google-fonts/montserrat';
-import { colores, tipografia } from './src/theme';
+import CalculadoraScreen from './src/screens/CalculadoraScreen';
+import { colores } from './src/theme';
 
 export default function App() {
   const [fuentesCargadas] = useFonts({
@@ -20,23 +21,9 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Calculadora</Text>
+    <SafeAreaProvider>
+      <CalculadoraScreen />
       <StatusBar style="light" backgroundColor={colores.encabezado} />
-    </View>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colores.fondo,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titulo: {
-    color: colores.encabezado,
-    fontFamily: tipografia.bold,
-    fontSize: 28,
-  },
-});
