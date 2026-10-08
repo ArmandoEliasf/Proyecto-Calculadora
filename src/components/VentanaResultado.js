@@ -5,12 +5,12 @@ export default function VentanaResultado({ visible, expresion, resultado, onNuev
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onCerrar}>
       <View style={styles.fondo}>
-        <View style={styles.tarjeta}>
+        <View style={styles.tarjeta} testID="ventana-resultado">
           <Text style={styles.etiqueta}>Resultado</Text>
           <Text style={styles.expresion} numberOfLines={1}>
             {expresion}
           </Text>
-          <Text style={styles.resultado} numberOfLines={1} adjustsFontSizeToFit>
+          <Text style={styles.resultado} numberOfLines={1} adjustsFontSizeToFit testID="valor-resultado">
             {String(resultado)}
           </Text>
 

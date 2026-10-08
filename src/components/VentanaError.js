@@ -5,7 +5,7 @@ export default function VentanaError({ visible, onCerrar }) {
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={onCerrar}>
       <View style={styles.fondo}>
-        <View style={styles.tarjeta}>
+        <View style={styles.tarjeta} testID="ventana-error">
           <View style={styles.simbolo}>
             <Text style={styles.simboloTexto}>!</Text>
           </View>

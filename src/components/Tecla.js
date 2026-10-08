@@ -5,6 +5,8 @@ export default function Tecla({ etiqueta, onPress, variante = 'principal', ancho
   return (
     <Pressable
       onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={etiqueta}
       style={({ pressed }) => [
         styles.base,
         variante === 'acento' ? styles.acento : styles.principal,

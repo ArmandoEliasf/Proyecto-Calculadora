@@ -85,7 +85,12 @@ export default function CalculadoraScreen({ onVolver, onAyuda }) {
       <Encabezado titulo="Calculadora" onVolver={onVolver} onAyuda={onAyuda} />
 
       <View style={styles.pantalla}>
-        <Text style={styles.textoPantalla} numberOfLines={1} adjustsFontSizeToFit>
+        <Text
+          style={styles.textoPantalla}
+          numberOfLines={1}
+          adjustsFontSizeToFit
+          testID="pantalla"
+        >
           {expresion === '' ? '0' : expresion}
         </Text>
       </View>
