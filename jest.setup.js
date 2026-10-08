@@ -2,9 +2,13 @@ jest.mock('expo-font', () => ({
   useFonts: () => [true, null],
 }));
 
-jest.mock('@expo-google-fonts/montserrat', () => ({
+jest.mock('@expo-google-fonts/montserrat/400Regular', () => ({
   Montserrat_400Regular: 'Montserrat_400Regular',
+}));
+jest.mock('@expo-google-fonts/montserrat/600SemiBold', () => ({
   Montserrat_600SemiBold: 'Montserrat_600SemiBold',
+}));
+jest.mock('@expo-google-fonts/montserrat/700Bold', () => ({
   Montserrat_700Bold: 'Montserrat_700Bold',
 }));
 

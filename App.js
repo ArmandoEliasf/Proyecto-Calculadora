@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
-import {
-  Montserrat_400Regular,
-  Montserrat_600SemiBold,
-  Montserrat_700Bold,
-} from '@expo-google-fonts/montserrat';
+import { Montserrat_400Regular } from '@expo-google-fonts/montserrat/400Regular';
+import { Montserrat_600SemiBold } from '@expo-google-fonts/montserrat/600SemiBold';
+import { Montserrat_700Bold } from '@expo-google-fonts/montserrat/700Bold';
 import InicioScreen from './src/screens/InicioScreen';
 import CalculadoraScreen from './src/screens/CalculadoraScreen';
 import AyudaScreen from './src/screens/AyudaScreen';
