@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
@@ -6,6 +7,7 @@ import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from '@expo-google-fonts/montserrat';
+import InicioScreen from './src/screens/InicioScreen';
 import CalculadoraScreen from './src/screens/CalculadoraScreen';
 import { colores } from './src/theme';
 
@@ -15,6 +17,7 @@ export default function App() {
     Montserrat_600SemiBold,
     Montserrat_700Bold,
   });
+  const [pantalla, setPantalla] = useState('inicio');
 
   if (!fuentesCargadas) {
     return null;
@@ -22,7 +25,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <CalculadoraScreen />
+      {pantalla === 'inicio' ? (
+        <InicioScreen onComenzar={() => setPantalla('calculadora')} />
+      ) : (
+        <CalculadoraScreen onVolver={() => setPantalla('inicio')} />
+      )}
       <StatusBar style="light" backgroundColor={colores.encabezado} />
     </SafeAreaProvider>
   );
